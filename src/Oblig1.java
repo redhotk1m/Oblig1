@@ -140,4 +140,19 @@ public class Oblig1 {
 
     }
 
+    public static void rotasjon(char [] a){
+        if (a==null || a.length==0){
+            return;
+        }
+
+        for(int i = a.length-1; i > 0; i--){
+            char temp = a[i];
+            a[i] = a[i-1];
+            a[i-1] = temp;
+        }
+
+
+        System.out.print(Arrays.toString(a));
+
+    }
 }
