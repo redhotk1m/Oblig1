@@ -49,4 +49,14 @@ public class Oblig1 {
     //I worst case scenario blir det n antall ombyttinger, og i best case scenario blir det 0 ombyttinger.
     //SPØR OM HJELP!
 
+    public static int antallUlikeSortert (int [] a) {
+
+        if (a.length<=0){
+            throw new NoSuchElementException("Listen er tom. a: " + a.length + " < 1");
+        }
+
+
+        return 0;
+    }
+
 }
