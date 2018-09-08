@@ -50,7 +50,7 @@ public class Oblig1 {
     //SPØR OM HJELP!
 
     public static int antallUlikeSortert (int [] a) {
-        int antallUlike=0;
+        int antallUlike=1;
 
         if (a == null) {
             return 0;
@@ -62,7 +62,7 @@ public class Oblig1 {
                 if(a[i] > a[i + 1]){
                     throw new IllegalStateException("Listen er ikke sortert" + a);
                 }
-                else if (a[i] < a[i + 1]){
+                else if (a[i] != a[i + 1]){
                     antallUlike++;
                     System.out.print(antallUlike);
                 }
