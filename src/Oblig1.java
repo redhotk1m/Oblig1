@@ -46,5 +46,7 @@ public class Oblig1 {
     }
 
     //Bruk O(N) formel for å regne ut gjennomsnittlig operasjoner.
+    //I worst case scenario blir det n antall ombyttinger, og i best case scenario blir det 0 ombyttinger.
+    //SPØR OM HJELP!
 
 }
