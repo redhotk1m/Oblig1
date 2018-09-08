@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class Oblig1 {
@@ -72,6 +73,71 @@ public class Oblig1 {
             }
 
         return antallUlike;
+    }
+
+
+    public static void delsortering(int [] a){
+
+
+        sortering(a);
+        System.out.println(Arrays.toString(a) + " la");
+
+        for (int i = 0, j = 0, k = 0; i<a.length-1; i++){
+            if (a[i] % 2 != 0){
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+                j++;
+            }
+            System.out.println(Arrays.toString(a));
+        }
+        for (int i = 0, j = 0, k = 0; i<a.length-1; i++)
+            if (a[i] % 2 == 0 && (a[i]>a[i+1])){
+                int temp;
+                temp = a[i];
+                a[i] = a[i+1];
+                a[i+1]=temp;
+            }
+
+        System.out.println(Arrays.toString(a) + " leeee");
+    }
+
+    public static int maks(int [] a, int fra, int til){
+
+
+        int m = fra;              // indeks til største verdi i a[fra:til>
+        int maksverdi = a[fra];   // største verdi i a[fra:til>
+
+        for (int i = fra + 1; i < til; i++)
+        {
+            if (a[i] > maksverdi)
+            {
+                m = i;                // indeks til største verdi oppdateres
+                maksverdi = a[m];     // største verdi oppdateres
+            }
+        }
+        return m;
+    }
+
+    public static void bytt(int[] a, int i, int j)
+    {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+    public static void sortering(int[] a){
+
+        int n = a.length;
+
+        if (n<2) throw new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
+
+        int m;
+        for (int i = 0; i<a.length; i++){
+            m = maks(a,0,a.length-i);
+            bytt(a,m,a.length-1-i);
+        }
+
     }
 
 }
