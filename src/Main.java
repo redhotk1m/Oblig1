@@ -5,9 +5,10 @@ public class Main {
     public static void main(String[] args) {
         char [] a = {'a', 'b', 'c', 'd', 'e', 'f'};
         char [] b = {};
-        String s = "heyy";
-        String t = "yo";
-        Oblig1.flett(s,t);
+        String t = "";
+       String s = "AB";
+       Oblig1.flett(t,s);
+       System.out.print(Oblig1.flett(s,t));
 
 
 
