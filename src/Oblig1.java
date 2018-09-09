@@ -193,4 +193,31 @@ public class Oblig1 {
         }
     }
     }
+
+    public static String flett(String s, String t){
+        String d="";
+        if (s.length()>t.length()) {
+            for (int i = 0; i < t.length(); i++) {
+                String c = (s.substring(i, i + 1) + t.substring(i, i + 1));
+                d = d + c;
+                if (i == t.length() - 1) {
+                    d = d + s.substring(i + 1);
+                }
+            }
+        }
+        else{
+            for (int i = 0; i < s.length(); i++) {
+                String c = (t.substring(i, i + 1) + s.substring(i, i + 1));
+                d = d + c;
+                if (i == s.length() - 1) {
+                    d = d + t.substring(i + 1);
+                }
+                System.out.println(d);
+            }
+        }
+        System.out.println(d);
+        return t;
+    }
+
+
 }
