@@ -3,8 +3,9 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int a[] = {6, 10, 9 , 4, 1, 3 ,8 ,5 , 2 , 7};
-        Oblig1.delsortering(a);
+        char [] a = {'a', 'b', 'c', 'd', 'e', 'f'};
+        char [] b = {};
+        Oblig1.rotasjon(b, 1);
 
        // Oblig1.ombyttinger(a);
         //System.out.println(Arrays.toString(a));

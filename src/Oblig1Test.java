@@ -25,8 +25,8 @@ public class Oblig1Test {
         //antallFeil += oppgave2();
         //antallFeil += oppgave3();
         //antallFeil += oppgave4();
-        antallFeil += oppgave5();
-        //antallFeil += oppgave6();
+        //antallFeil += oppgave5();
+        antallFeil += oppgave6();
         //antallFeil += oppgave7();
         //antallFeil += oppgave8();
         //antallFeil += oppgave9();
@@ -347,7 +347,7 @@ public class Oblig1Test {
     ///// Oppgave 5 //////////////////////////////////////
 */
 
-    public static int oppgave5() {
+    /*public static int oppgave5() {
         int antallFeil = 0;
 
         char[] a = {};
@@ -386,12 +386,12 @@ public class Oblig1Test {
         }
 
         return antallFeil;
-    }
-}
+    }*/
+
 
     ///// Oppgave 6 //////////////////////////////////////
 
-    /* public static int oppgave6() {
+    public static int oppgave6() {
         int antallFeil = 0;
 
         char[] a = {};
@@ -404,6 +404,7 @@ public class Oblig1Test {
                     ("Oppgave 6: a) Skal ikke kaste unntak for en tom tabell!!");
             antallFeil++;
         }
+
 
         char[] b = {'A'};
         char[] b0 = {'A'};
@@ -458,53 +459,54 @@ public class Oblig1Test {
             antallFeil++;
         }
 
-        char[] x = new char[100_000];
-        long tid = System.currentTimeMillis();
-        Oblig1.rotasjon(x, 99_999);
-        tid = System.currentTimeMillis() - tid;
+         char[] x = new char[100_000];
+         long tid = System.currentTimeMillis();
+         Oblig1.rotasjon(x, 99_999);
+         tid = System.currentTimeMillis() - tid;
 
-        if (tid > 20) {
-            System.out.println("Oppgave 6: i) Metoden "
-                    + "er for ineffektiv. Må forbedres!");
-            antallFeil++;
-        }
+         if (tid > 20) {
+             System.out.println("Oppgave 6: i) Metoden "
+                     + "er for ineffektiv. Må forbedres!");
+             antallFeil++;
+         }
 
-        tid = System.currentTimeMillis();
-        Oblig1.rotasjon(x, 199_999);
-        tid = System.currentTimeMillis() - tid;
+         tid = System.currentTimeMillis();
+         Oblig1.rotasjon(x, 199_999);
+         tid = System.currentTimeMillis() - tid;
 
-        if (tid > 20) {
-            System.out.println("Oppgave 6: j) Metoden "
-                    + "er for ineffektiv. Må forbedres!");
-            antallFeil++;
-        }
+         if (tid > 20) {
+             System.out.println("Oppgave 6: j) Metoden "
+                     + "er for ineffektiv. Må forbedres!");
+             antallFeil++;
+         }
 
-        tid = System.currentTimeMillis();
-        Oblig1.rotasjon(x, 50_000);
-        tid = System.currentTimeMillis() - tid;
+         tid = System.currentTimeMillis();
+         Oblig1.rotasjon(x, 50_000);
+         tid = System.currentTimeMillis() - tid;
 
-        if (tid > 20) {
-            System.out.println("Oppgave 6: k) Metoden "
-                    + "er for ineffektiv. Må forbedres!");
-            antallFeil++;
-        }
+         if (tid > 20) {
+             System.out.println("Oppgave 6: k) Metoden "
+                     + "er for ineffektiv. Må forbedres!");
+             antallFeil++;
+         }
 
-        tid = System.currentTimeMillis();
-        Oblig1.rotasjon(x, -40_000);
-        tid = System.currentTimeMillis() - tid;
+         tid = System.currentTimeMillis();
+         Oblig1.rotasjon(x, -40_000);
+         tid = System.currentTimeMillis() - tid;
 
-        if (tid > 20) {
-            System.out.println("Oppgave 6: l) Metoden "
-                    + "er for ineffektiv. Må forbedres!");
-            antallFeil++;
-        }
+         if (tid > 20) {
+             System.out.println("Oppgave 6: l) Metoden "
+                     + "er for ineffektiv. Må forbedres!");
+             antallFeil++;
+         }
 
-        return antallFeil;
-    }
+         return antallFeil;
+     }
+}
 
     ///// Oppgave 7 //////////////////////////////////////
 
-    public static int oppgave7() {
+    /*public static int oppgave7() {
         int antallFeil = 0;
         String s = null;
 

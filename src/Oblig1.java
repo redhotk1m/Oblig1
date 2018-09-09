@@ -155,4 +155,42 @@ public class Oblig1 {
         System.out.print(Arrays.toString(a));
 
     }
+
+    public static void rotasjon(char [] a, int k){
+        boolean stop = false;
+        if (a == null || a.length == 0) {
+            stop = true;
+        }
+
+        int s = k;
+        if (k==0){
+            stop = true;
+        }
+        System.out.println(stop);
+        if (!stop){
+        if (k>0) {
+            while (s!=0){
+                for (int i = a.length - 1; i > 0; i--) {
+                    char temp = a[i];
+                    a[i] = a[i - 1];
+                    a[i - 1] = temp;
+                }
+                s--;
+            }
+        }
+        if (k<0){
+
+            while (s!=0){System.out.println(s);
+                s++;
+                System.out.println(s+"e");
+                for (int i = 0; i < a.length-1; i++) {
+                    char temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                }
+
+            }
+        }
+    }
+    }
 }
