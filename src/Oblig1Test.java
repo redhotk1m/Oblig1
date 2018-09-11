@@ -27,7 +27,7 @@ public class Oblig1Test {
         //antallFeil += oppgave4();
         //antallFeil += oppgave5();
         // antallFeil += oppgave6();
-        antallFeil += oppgave7();
+        //antallFeil += oppgave7();
         //antallFeil += oppgave8();
         //antallFeil += oppgave9();
         //antallFeil += oppgave10();
@@ -39,6 +39,7 @@ public class Oblig1Test {
                     + antallFeil + " feil eller svakheter!");
         }
     }
+}
 
     ///// Oppgave 1 //////////////////////////////////////
 
@@ -507,7 +508,7 @@ public class Oblig1Test {
 
     ///// Oppgave 7 //////////////////////////////////////
 
-    public static int oppgave7() {
+    /*public static int oppgave7() {
         int antallFeil = 0;
         String s = null;
 
@@ -581,59 +582,78 @@ public class Oblig1Test {
         }
         return antallFeil;
     }
-}
-/*
-        String[] a = {};
 
-        try {
-            s = Oblig1.flett(a);  // kaller metoden
-        } catch (Exception e) {
-            System.out.println(e);
-            System.out.println
-                    ("Oppgave 7b: a) Skal ikke kaste unntak for en tom tabell!");
-            antallFeil++;
-        }
 
-        if (s.compareTo("") != 0) {
-            System.out.println
-                    ("Oppgave 7b: b) Svaret skal bli lik en tom streng!");
-            antallFeil++;
-        }
+    String[] a = {};
 
-        try {
-            s = Oblig1.flett("", "ABC", "");  // kaller metoden
-        } catch (Exception e) {
-            System.out.println(e);
-            System.out.println
-                    ("Oppgave 7b: c) Skal ikke kaste unntak for en tom streng!");
-            antallFeil++;
-        }
+        try
 
-        if (s.compareTo("ABC") != 0) {
-            System.out.println
-                    ("Oppgave 7b: d) Svaret skal bli lik ABC");
-            antallFeil++;
-        }
+    {
+        s = Oblig1.flett(a);  // kaller metoden
+    } catch(
+    Exception e)
 
-        s = Oblig1.flett("AM ", "L", "GEDS", "ORATKRR", "", "R TRTE", "IO", "TGAUU");
+    {
+        System.out.println(e);
+        System.out.println
+                ("Oppgave 7b: a) Skal ikke kaste unntak for en tom tabell!");
+        antallFeil++;
+    }
 
-        if (s.compareTo("ALGORITMER OG DATASTRUKTURER") != 0) {
-            System.out.println
-                    ("Oppgave 7b: e) Svaret skal bli ALGORITMER OG DATASTRUKTURER!");
-            antallFeil++;
-        }
+        if(s.compareTo("")!=0)
 
-        s = Oblig1.flett("AFK", "BGLP", "CHMQT", "DINRUW", "EJOSVXY");
+    {
+        System.out.println
+                ("Oppgave 7b: b) Svaret skal bli lik en tom streng!");
+        antallFeil++;
+    }
 
-        if (s.compareTo("ABCDEFGHIJKLMNOPQRSTUVWXY") != 0) {
-            System.out.println
-                    ("Oppgave 7b: f) Svaret skal bli ABCDEFGHIJKLMNOPQRSTUVWXY!");
-            antallFeil++;
-        }
+        try
+
+    {
+        s = Oblig1.flett("", "ABC", "");  // kaller metoden
+    } catch(
+    Exception e)
+
+    {
+        System.out.println(e);
+        System.out.println
+                ("Oppgave 7b: c) Skal ikke kaste unntak for en tom streng!");
+        antallFeil++;
+    }
+
+        if(s.compareTo("ABC")!=0)
+
+    {
+        System.out.println
+                ("Oppgave 7b: d) Svaret skal bli lik ABC");
+        antallFeil++;
+    }
+
+    s =Oblig1.flett("AM ","L","GEDS","ORATKRR","","R TRTE","IO","TGAUU");
+
+        if(s.compareTo("ALGORITMER OG DATASTRUKTURER")!=0)
+
+    {
+        System.out.println
+                ("Oppgave 7b: e) Svaret skal bli ALGORITMER OG DATASTRUKTURER!");
+        antallFeil++;
+    }
+
+    s =Oblig1.flett("AFK","BGLP","CHMQT","DINRUW","EJOSVXY");
+
+        if(s.compareTo("ABCDEFGHIJKLMNOPQRSTUVWXY")!=0)
+
+    {
+        System.out.println
+                ("Oppgave 7b: f) Svaret skal bli ABCDEFGHIJKLMNOPQRSTUVWXY!");
+        antallFeil++;
+    }
 
         return antallFeil;
-    }
 }
+}
+
 
     ///// Oppgave 8 //////////////////////////////////////
     /*

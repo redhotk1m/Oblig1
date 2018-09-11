@@ -50,7 +50,7 @@ public class Oblig1 {
     //I worst case scenario blir det n antall ombyttinger, og i best case scenario blir det 0 ombyttinger.
     //SPØR OM HJELP!
 
-    public static int antallUlikeSortert (int [] a) {
+    /*public static int antallUlikeSortert (int [] a) {
         int antallUlike=1;
 
         if (a == null) {
@@ -73,7 +73,7 @@ public class Oblig1 {
             }
 
         return antallUlike;
-    }
+    }*/
 
 
     public static void delsortering(int [] a){
@@ -224,8 +224,40 @@ public class Oblig1 {
             }
         }
         System.out.println(d);
-        return t;
+        return d;
     }
+
+    public static String flettFeil(String... s){
+        String d = "";
+        for (int i = 0; i < s.length; i++){
+            for (int k = 0; k < s[i].length(); k++){
+                    String c = (s[i].substring(k,k+1));
+                    d = d + c;
+                    System.out.println(d);
+                }
+            }
+
+        return "s";
+    }
+
+
+    public static String flett(String... s){
+        String d = "";
+        if()
+        //Må avsluttes når vi ikke har flere bokstaver
+        while (true) {
+            for (int i = 0; i < s.length; i++) {
+                int k = 0; // Må inkrementeres, når vi har skrevet ut ALLE strengene, og sjekke at strengen har K bokstaver.
+                    String c = (s[i].substring(k, k + 1));
+                    d = d + c;
+                    System.out.println(d);
+                }
+        }
+
+        return "s";
+    }
+
+    //Oppgave 2
 
 
 }
