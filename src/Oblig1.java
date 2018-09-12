@@ -241,20 +241,22 @@ public class Oblig1 {
     }
 
 
-    public static String flett(String... s){
+    public static String flett(String... s) {
         String d = "";
-        if()
+        System.out.println(s.length);
+        //if()
         //Må avsluttes når vi ikke har flere bokstaver
-        while (true) {
+        for (int k = 0; k < 8; k++) {
             for (int i = 0; i < s.length; i++) {
-                int k = 0; // Må inkrementeres, når vi har skrevet ut ALLE strengene, og sjekke at strengen har K bokstaver.
+                //int k = 0; // Må inkrementeres, når vi har skrevet ut ALLE strengene, og sjekke at strengen har K bokstaver.
+                if (s[i] != null && s[i].length() != 0 && s[i].substring(0).length() > k) {
                     String c = (s[i].substring(k, k + 1));
                     d = d + c;
                     System.out.println(d);
                 }
+            }
         }
-
-        return "s";
+        return d;
     }
 
     //Oppgave 2

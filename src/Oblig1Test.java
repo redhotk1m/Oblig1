@@ -27,7 +27,7 @@ public class Oblig1Test {
         //antallFeil += oppgave4();
         //antallFeil += oppgave5();
         // antallFeil += oppgave6();
-        //antallFeil += oppgave7();
+        antallFeil += oppgave7();
         //antallFeil += oppgave8();
         //antallFeil += oppgave9();
         //antallFeil += oppgave10();
@@ -39,7 +39,6 @@ public class Oblig1Test {
                     + antallFeil + " feil eller svakheter!");
         }
     }
-}
 
     ///// Oppgave 1 //////////////////////////////////////
 
@@ -508,7 +507,7 @@ public class Oblig1Test {
 
     ///// Oppgave 7 //////////////////////////////////////
 
-    /*public static int oppgave7() {
+    public static int oppgave7() {
         int antallFeil = 0;
         String s = null;
 
@@ -580,8 +579,6 @@ public class Oblig1Test {
                     ("Oppgave 7a: i) Svaret skal bli lik ABCDEFGHIJKLMN");
             antallFeil++;
         }
-        return antallFeil;
-    }
 
 
     String[] a = {};
