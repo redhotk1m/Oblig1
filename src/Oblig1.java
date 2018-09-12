@@ -156,42 +156,28 @@ public class Oblig1 {
 
     }
 
-    public static void rotasjon(char [] a, int k){
-        boolean stop = false;
-        if (a == null || a.length == 0) {
-            stop = true;
-        }
 
-        int s = k;
-        if (k==0){
-            stop = true;
-        }
-        System.out.println(stop);
-        if (!stop){
-        if (k>0) {
-            while (s!=0){
-                for (int i = a.length - 1; i > 0; i--) {
-                    char temp = a[i];
-                    a[i] = a[i - 1];
-                    a[i - 1] = temp;
-                }
-                s--;
-            }
-        }
-        if (k<0){
-
-            while (s!=0){System.out.println(s);
-                s++;
-                System.out.println(s+"e");
-                for (int i = 0; i < a.length-1; i++) {
-                    char temp = a[i];
-                    a[i] = a[i + 1];
-                    a[i + 1] = temp;
-                }
-
-            }
-        }
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
+    
+
+    public static void rotasjon(char[] c, int d) {
+        int n = c.length;  if (n < 2) return;
+        if ((d %= n) < 0) d += n;
+        int s = gcd(n, d);
+
+        for (int k = 0; k < s; k++) {
+
+            char value = c[k];
+            for (int i = k - d, j = k; i != k; i -= d) {
+                if (i < 0) i += n;
+                c[j] = c[i]; j = i;
+            }
+            c[k + d] = value;
+        }
+
+
     }
 
 
@@ -246,6 +232,7 @@ public class Oblig1 {
         System.out.println(s.length);
         //if()
         //Må avsluttes når vi ikke har flere bokstaver
+        //k er nå 8  men bedre med s.length
         for (int k = 0; k < 8; k++) {
             for (int i = 0; i < s.length; i++) {
                 //int k = 0; // Må inkrementeres, når vi har skrevet ut ALLE strengene, og sjekke at strengen har K bokstaver.
