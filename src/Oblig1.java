@@ -112,7 +112,76 @@ public class Oblig1 {
         }
         return antallUnike;
     }
-    
+
+    public static int antallUlikeUsortert(int [] a){
+
+        if (a == null) {
+            return 0;
+        }
+        if (a.length==0){
+            return 0;
+        }
+        if (a.length==1){
+            return 1;
+        }
+        int antallUnike=0;
+        boolean toførstelike=false;
+        if (a[0]==a[1]){
+            toførstelike=true;
+        }
+        if (a.length==2 && toførstelike) {
+            antallUnike=1;
+            return antallUnike;
+        }
+
+        boolean ikkeUnik = false;
+        boolean totaltUnik = false;
+        int ikkeunik = 0;
+        int unik = 0;
+        for (int k = 0; k<a.length; k++){
+            for (int i = k; i<a.length-k; i++){
+                if (ikkeUnik){
+                    System.out.println("hei");
+                    ikkeUnik=false;
+                    unik++;
+                }
+                int Temp = a[k];
+                if (a[i+k] == a[k]){
+                    System.out.println("yoyoy");
+                    ikkeUnik = true;
+                    ikkeunik++;
+                }else{
+                    totaltUnik=true;
+                }
+            }
+            if (totaltUnik){
+                totaltUnik=false;
+                //unik++;
+            }
+        }
+        System.out.println(unik);
+        return unik;
+    }
+
+
+        public static void test(int [] a) {
+            int[] array = {5, 6, 2, 5, 2, 2, 0, 1, 6};
+            for (int i = 0; i < array.length; i++) {
+                int count = 0;
+                int val = array[i];
+                for (int j = 0; j < array.length; j++) {
+                    if (val == array[j]) {
+                        count += 1;
+                    }
+                }
+                System.out.println(val + " occurs" + " " + count);
+
+            }
+        }
+
+
+
+
 
     public static void delsortering(int [] a){
 
