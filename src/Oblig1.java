@@ -50,31 +50,69 @@ public class Oblig1 {
     //I worst case scenario blir det n antall ombyttinger, og i best case scenario blir det 0 ombyttinger.
     //SPØR OM HJELP!
 
-    /*public static int antallUlikeSortert (int [] a) {
-        int antallUlike=1;
+    public static int antallUlikeSortert (int [] a) {
+        int antallUnike = 0;
+        int hjelpetall = 0;
+
 
         if (a == null) {
-            return 0;
-        }else if (a.length == 1){
-            return 1;
+            antallUnike=0;
+            System.out.println(antallUnike + "<-- Her er det et tomt array");
+            return antallUnike;
+        }
+        if (a.length==0){
+            antallUnike=0;
+            System.out.println(antallUnike + "<-- Her er det ingen verdier i arrayet");
+            return antallUnike;
+        }
+        if (a.length==1){
+            antallUnike=1;
+            System.out.println(antallUnike + "<-- Her er det bare 1 verdi i arrayet");
+            return antallUnike;
+        }
+        boolean feilSortert = false;
+        if (a.length>1) {
+            for (int i = 0; i < a.length - 1; i++) {
+                if (a[i] > a[i + 1]) {
+                    feilSortert = true;
+                }
+            }
         }
 
-            for (int i = 0; i < a.length-1; i++) {
-                if(a[i] > a[i + 1]){
-                    throw new IllegalStateException("Listen er ikke sortert" + a);
+        if (feilSortert){
+            System.out.println("Nå ble det kastet en IllegalStateException fordi listen ikke er sortert");
+            throw new IllegalStateException("Listen er ikke sortert" + a);
+        }
+
+        if (a.length>2){
+            antallUnike=1;
+            hjelpetall=a[0];
+        }
+        boolean toførstelike = false;
+        if (a[0]==a[1]){
+            toførstelike=true;
+        }
+        if (a.length==2 && toførstelike) {
+            antallUnike=1;
+            return antallUnike;
+        }
+
+        for (int i = 1; i < a.length; i++){
+            System.out.println(antallUnike + " u " + hjelpetall + "h");;
+            if (a[i] == hjelpetall){
+                if (toførstelike){
+                    antallUnike++;
                 }
-                else if (a[i] != a[i + 1]){
-                    antallUlike++;
-                    System.out.print(antallUlike);
-                }
-
-
-
+                antallUnike--;
+            } else{
+                antallUnike++;
+                hjelpetall = a[i];
             }
-
-        return antallUlike;
-    }*/
-
+            System.out.println(antallUnike + " Dette returneres når vi har loopet gjennom for løkken");
+        }
+        return antallUnike;
+    }
+    
 
     public static void delsortering(int [] a){
 

@@ -22,11 +22,11 @@ public class Oblig1Test {
         int antallFeil = 0;
 
         //antallFeil += oppgave1();
-        //antallFeil += oppgave2();
+        antallFeil += oppgave2();
         //antallFeil += oppgave3();
         //antallFeil += oppgave4();
         //antallFeil += oppgave5();
-         antallFeil += oppgave6();
+         //antallFeil += oppgave6();
         //antallFeil += oppgave7();
         //antallFeil += oppgave8();
         //antallFeil += oppgave9();
@@ -93,7 +93,7 @@ public class Oblig1Test {
         }
         return antallFeil;
     }
-
+*/
 ///// Oppgave 2 //////////////////////////////////////
 
     public static int oppgave2() {
@@ -103,7 +103,7 @@ public class Oblig1Test {
         int[] b = {1};
         int[] c = {1, 2, 3, 4, 5, 4};
 
-        try {
+       /* try {
             Oblig1.antallUlikeSortert(a);  // kaller metoden
             Oblig1.antallUlikeSortert(b);  // kaller metoden
         } catch (Exception e) {
@@ -129,7 +129,7 @@ public class Oblig1Test {
             System.out.println
                     ("Oppgave 2: c) Kast et unntak for en usortert tabell!");
             antallFeil++;
-        }
+        }*/
 
         int[] d = {1, 1};
         int[] e = {1, 2, 3, 4, 5, 6, 7};
@@ -139,14 +139,14 @@ public class Oblig1Test {
                 || Oblig1.antallUlikeSortert(b) != 1
                 || Oblig1.antallUlikeSortert(d) != 1
                 || Oblig1.antallUlikeSortert(e) != 7
-                || Oblig1.antallUlikeSortert(f) != 7) {
+                || Oblig1.antallUlikeSortert(f) != 7
+        ) {
             System.out.println("Oppgave 2: d) Metoden gir feil resultat!");
             antallFeil++;
         }
         return antallFeil;
     }
-}
-*/
+
     ///// Oppgave 3 //////////////////////////////////////
 
    /* public static int oppgave3() {
