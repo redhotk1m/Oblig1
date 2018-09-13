@@ -295,6 +295,7 @@ public class Oblig1 {
         }
         return d;
     }
+    
 
     // Hjelpemetode
 

@@ -24,12 +24,12 @@ public class Oblig1Test {
         //antallFeil += oppgave1();
         //antallFeil += oppgave2();
         //antallFeil += oppgave3();
-        antallFeil += oppgave4();
+        //antallFeil += oppgave4();
         //antallFeil += oppgave5();
-         //antallFeil += oppgave6();
+        //antallFeil += oppgave6();
         //antallFeil += oppgave7();
         //antallFeil += oppgave8();
-        //antallFeil += oppgave9();
+        antallFeil += oppgave9();
         //antallFeil += oppgave10();
 
         if (antallFeil == 0) {
@@ -42,7 +42,7 @@ public class Oblig1Test {
 
     ///// Oppgave 1 //////////////////////////////////////
 
-    /*public static int oppgave1() {
+    public static int oppgave1() {
         int antallFeil = 0;
 
         boolean unntak = false;
@@ -93,17 +93,17 @@ public class Oblig1Test {
         }
         return antallFeil;
     }
-*/
+
 ///// Oppgave 2 //////////////////////////////////////
 
-  /*  public static int oppgave2() {
+    public static int oppgave2() {
         int antallFeil = 0;
 
         int[] a = {};
         int[] b = {1};
         int[] c = {1, 2, 3, 4, 5, 4};
 
-       /* try {
+        try {
             Oblig1.antallUlikeSortert(a);  // kaller metoden
             Oblig1.antallUlikeSortert(b);  // kaller metoden
         } catch (Exception e) {
@@ -145,11 +145,11 @@ public class Oblig1Test {
             antallFeil++;
         }
         return antallFeil;
-    }*/
+    }
 
     ///// Oppgave 3 //////////////////////////////////////
 
-   /* public static int oppgave3() {
+    public static int oppgave3() {
         int antallFeil = 0;
 
         int[] a = {};   // skal ikke kaste unntak her!
@@ -186,7 +186,7 @@ public class Oblig1Test {
         }
 
         return antallFeil;
-    }*/
+    }
 
     ///// Oppgave 4 //////////////////////////////////////
 
@@ -348,7 +348,7 @@ public class Oblig1Test {
     ///// Oppgave 5 //////////////////////////////////////
 
 
-    /*public static int oppgave5() {
+    public static int oppgave5() {
         int antallFeil = 0;
 
         char[] a = {};
@@ -387,7 +387,7 @@ public class Oblig1Test {
         }
 
         return antallFeil;
-    }*/
+    }
 
 
     ///// Oppgave 6 //////////////////////////////////////
@@ -504,9 +504,8 @@ public class Oblig1Test {
          return antallFeil;
      }
 
-
     ///// Oppgave 7 //////////////////////////////////////
-/*
+
     public static int oppgave7() {
         int antallFeil = 0;
         String s = null;
@@ -649,11 +648,9 @@ public class Oblig1Test {
 
         return antallFeil;
 }
-}
-
 
     ///// Oppgave 8 //////////////////////////////////////
-    /*
+
     public static int oppgave8() {
         int antallFeil = 0;
 
@@ -755,6 +752,8 @@ public class Oblig1Test {
         return antallFeil;
     }
 
+
+
     ///// Oppgave 9 //////////////////////////////////////
 
     public static int oppgave9() {
@@ -848,7 +847,7 @@ public class Oblig1Test {
 
     ///// Oppgave 10 //////////////////////////////////////
 
-    public static int oppgave10() {
+   /* public static int oppgave10() {
         int antallFeil = 0;
         boolean b = false;
 
