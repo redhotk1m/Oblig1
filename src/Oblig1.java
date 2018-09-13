@@ -295,6 +295,27 @@ public class Oblig1 {
         }
         return d;
     }
+
+
+    //Oppgave 8
+
+    public static int[] indekssortering(int[] a){
+        int arrayLen = a.length;
+        int[] c = a.clone();
+        int[] b = new int[arrayLen];
+
+        for(int i = 0; i < arrayLen; i++){
+            int var = min(a);
+            b[i] = var;
+            a[var] = Integer.MAX_VALUE;
+        }
+        for (int i=0; i<a.length; i++){
+            a[i]=c[i];
+        }
+        return b;
+    }
+
+
     
 
     // Hjelpemetode
@@ -353,6 +374,20 @@ public class Oblig1 {
         }
         maksverdi = a[a.length-1];
         return maksverdi;
+    }
+
+    public static int min(int[] array){
+        int arrayLen = array.length;
+        int min = Integer.MAX_VALUE;
+        int index = 0;
+
+        for(int i = 0; i < arrayLen; i++){
+            if(min > array[i]){
+                min = array[i];
+                index = i;
+            }
+        }
+        return index;
     }
 
 
