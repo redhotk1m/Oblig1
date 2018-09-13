@@ -23,8 +23,8 @@ public class Oblig1Test {
 
         //antallFeil += oppgave1();
         //antallFeil += oppgave2();
-        antallFeil += oppgave3();
-        //antallFeil += oppgave4();
+        //antallFeil += oppgave3();
+        antallFeil += oppgave4();
         //antallFeil += oppgave5();
          //antallFeil += oppgave6();
         //antallFeil += oppgave7();
@@ -96,7 +96,7 @@ public class Oblig1Test {
 */
 ///// Oppgave 2 //////////////////////////////////////
 
-    public static int oppgave2() {
+  /*  public static int oppgave2() {
         int antallFeil = 0;
 
         int[] a = {};
@@ -129,7 +129,7 @@ public class Oblig1Test {
             System.out.println
                     ("Oppgave 2: c) Kast et unntak for en usortert tabell!");
             antallFeil++;
-        }*/
+        }
 
         int[] d = {1, 1};
         int[] e = {1, 2, 3, 4, 5, 6, 7};
@@ -145,11 +145,11 @@ public class Oblig1Test {
             antallFeil++;
         }
         return antallFeil;
-    }
+    }*/
 
     ///// Oppgave 3 //////////////////////////////////////
 
-    public static int oppgave3() {
+   /* public static int oppgave3() {
         int antallFeil = 0;
 
         int[] a = {};   // skal ikke kaste unntak her!
@@ -186,11 +186,11 @@ public class Oblig1Test {
         }
 
         return antallFeil;
-    }
+    }*/
 
     ///// Oppgave 4 //////////////////////////////////////
 
-    /*public static int oppgave4() {
+    public static int oppgave4() {
         int antallFeil = 0;
 
         int[] a = {};   // skal ikke kaste unntak her!
@@ -346,7 +346,7 @@ public class Oblig1Test {
     }
 
     ///// Oppgave 5 //////////////////////////////////////
-*/
+
 
     /*public static int oppgave5() {
         int antallFeil = 0;
@@ -503,7 +503,6 @@ public class Oblig1Test {
 
          return antallFeil;
      }
-}
 
 
     ///// Oppgave 7 //////////////////////////////////////
@@ -980,7 +979,7 @@ public class Oblig1Test {
         }
         return antallFeil;
     }
-
+*/
     ///// Hjelpemetoder /////////////////////////////
 
     public static void bytt(int[] a, int i, int j) {
@@ -1029,4 +1028,3 @@ public class Oblig1Test {
     }
 
 } // class Oblig1Test
-*/
