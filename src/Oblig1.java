@@ -315,6 +315,27 @@ public class Oblig1 {
         return b;
     }
 
+    //Oppgave 9
+
+    public static int[] tredjeMin(int[] a){
+        int size = 3;
+        int[] b = new int[size];
+        int[] c = a.clone();
+        if (a.length<3){
+            throw new NoSuchElementException("For liten tabell!");
+        }
+
+        for(int i = 0; i < size; i++){
+            int var = min(a);
+            b[i] = var;
+            a[var] = Integer.MAX_VALUE;
+        }
+        for (int i = 0; i<a.length; i++){
+            a[i] = c[i];
+        }
+        return b;
+    }
+
 
     
 
