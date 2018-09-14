@@ -15,7 +15,6 @@ public class Oblig1 {
     public static int ombyttinger(int [] a){
         int ombyttinger = 0;
 
-        int maksverdi;
 
         for (int i = 0; i<a.length-1; i++){
             int temp;
@@ -33,7 +32,6 @@ public class Oblig1 {
 
     //Bruk O(N) formel for å regne ut gjennomsnittlig operasjoner.
     //I worst case scenario blir det n antall ombyttinger, og i best case scenario blir det 0 ombyttinger.
-    //SPØR OM HJELP!
 
     //Oppgave 2
 
@@ -44,17 +42,14 @@ public class Oblig1 {
 
         if (a == null) {
             antallUnike=0;
-            System.out.println(antallUnike + "<-- Her er det et tomt array");
             return antallUnike;
         }
         if (a.length==0){
             antallUnike=0;
-            System.out.println(antallUnike + "<-- Her er det ingen verdier i arrayet");
             return antallUnike;
         }
         if (a.length==1){
             antallUnike=1;
-            System.out.println(antallUnike + "<-- Her er det bare 1 verdi i arrayet");
             return antallUnike;
         }
         boolean feilSortert = false;
@@ -67,7 +62,6 @@ public class Oblig1 {
         }
 
         if (feilSortert){
-            System.out.println("Nå ble det kastet en IllegalStateException fordi listen ikke er sortert");
             throw new IllegalStateException("Listen er ikke sortert" + a);
         }
 
@@ -75,19 +69,18 @@ public class Oblig1 {
             antallUnike=1;
             hjelpetall=a[0];
         }
-        boolean toførstelike = false;
+        boolean tofyrstelike = false;
         if (a[0]==a[1]){
-            toførstelike=true;
+            tofyrstelike=true;
         }
-        if (a.length==2 && toførstelike) {
+        if (a.length==2 && tofyrstelike) {
             antallUnike=1;
             return antallUnike;
         }
 
         for (int i = 1; i < a.length; i++){
-            System.out.println(antallUnike + " u " + hjelpetall + "h");;
             if (a[i] == hjelpetall){
-                if (toførstelike){
+                if (tofyrstelike){
                     antallUnike++;
                 }
                 antallUnike--;
@@ -95,7 +88,6 @@ public class Oblig1 {
                 antallUnike++;
                 hjelpetall = a[i];
             }
-            System.out.println(antallUnike + " Dette returneres når vi har loopet gjennom for løkken");
         }
         return antallUnike;
     }
@@ -122,36 +114,35 @@ public class Oblig1 {
         }
 
         return antallUlike;
-
     }
 
 
     //Oppgave 4
 
-    public static void delsortering(int [] a){
-        if (a == null || a.length==0){
-            return;
-        }
-        if (a.length==1){
-            return;
-        }
+    public static void delsortering(int[] a) {
+        if(a.length == 0) return;
+        if(a.length < 2) return;
+        int fra = 0;
+        int til = a.length - 1;
 
-        sorteringUtenUnntak(a);
-        int k = a.length;
-        int testverdi = 0;
-            for (int i = 0, j = 0; i < a.length - 1; i++) {
-                if (a[i] % 2 != 0) {
-                    int temp = a[i];
-                    a[i] = a[j];
-                    a[j] = temp;
-                    j++;
-                    testverdi=a[i];
-                }
-            }
-        System.out.println("HEI!" + testverdi);
-        partition(a,(testverdi+1+a.length)/2,testverdi,a.length);
-        System.out.println(Arrays.toString(a) + " leeeeeeeeeeeee");
+        switch(scanDataSet(a)){
+            case 0:
+                delsortering_partisjon_subrutine(a, fra, til);
+                int pivotIndex = findIndexOfFirstEvenInteger(a);
+                quicksort(a, 0, pivotIndex-1);
+                quicksort(a, pivotIndex,a.length-1);
+                break;
+
+            case 1:
+                quicksort(a, 0, a.length - 1);
+                break;
+
+            case 2:
+                quicksort(a, 0, a.length - 1);
+                break;
+        }
     }
+
 
     //Oppgave 5
 
@@ -174,9 +165,6 @@ public class Oblig1 {
     // Vi har brukt mye tid på denne oppgaven og pga av liten tid måtte vi
     // se til kompendiet.
 
-    public static int gcd(int a, int b) {
-        return b == 0 ? a : gcd(b, a % b);
-    }
 
     public static void rotasjon(char[] c, int d) {
         int n = c.length;  if (n < 2) return;
@@ -219,15 +207,14 @@ public class Oblig1 {
             value = s.length();
             ss=true;
         }
-
             for (int i = 0; i < value; i++) {
                 String c = (s.substring(i, i + 1) + t.substring(i, i + 1));
                 d = d + c;
                 if (tt && i == t.length() - 1 ){
                     d = d + s.substring(i + 1);
                 }
-                else if (ss && i == s.length() - 1){
-                    d = d + t.substring(i + 1);
+                    else if (ss && i == s.length() - 1){
+                        d = d + t.substring(i + 1);
             }
         }
         return d;
@@ -237,17 +224,12 @@ public class Oblig1 {
 
     public static String flett(String... s) {
         String d = "";
-        System.out.println(s.length);
-        //if()
-        //Må avsluttes når vi ikke har flere bokstaver
-        //k er nå 8  men bedre med s.length
-        for (int k = 0; k < 8; k++) { //Vet vi ikke bør ha konstant verdi 8 her, skal fikses dersom vi har tid.
+        //k er nå 8  men bør være en ikke statisk verdi
+        for (int k = 0; k < 8; k++) {
             for (int i = 0; i < s.length; i++) {
-                //int k = 0; // Må inkrementeres, når vi har skrevet ut ALLE strengene, og sjekke at strengen har K bokstaver.
                 if (s[i] != null && s[i].length() != 0 && s[i].substring(0).length() > k) {
                     String c = (s[i].substring(k, k + 1));
                     d = d + c;
-                    System.out.println(d);
                 }
             }
         }
@@ -258,11 +240,10 @@ public class Oblig1 {
     //Oppgave 8
 
     public static int[] indekssortering(int[] a){
-        int arrayLen = a.length;
         int[] c = a.clone();
-        int[] b = new int[arrayLen];
+        int[] b = new int[a.length];
 
-        for(int i = 0; i < arrayLen; i++){
+        for(int i = 0; i < a.length; i++){
             int var = min(a);
             b[i] = var;
             a[var] = Integer.MAX_VALUE;
@@ -324,37 +305,11 @@ public class Oblig1 {
     }
 
 
-    // Method to sort a string alphabetically
-    public static String sortString(String inputString)
-    {
-        // convert input string to char array
-        char tempArray[] = inputString.toCharArray();
-
-        // sort tempArray
-        Arrays.sort(tempArray);
-
-        // return new sorted string
-        return new String(tempArray);
-    }
-
-    // Hjelpemetode
-
-    public static int maks(int [] a, int fra, int til){
 
 
-        int m = fra;              // indeks til største verdi i a[fra:til>
-        int maksverdi = a[fra];   // største verdi i a[fra:til>
+    // Hjelpemetoder
 
-        for (int i = fra + 1; i < til; i++)
-        {
-            if (a[i] > maksverdi)
-            {
-                m = i;                // indeks til største verdi oppdateres
-                maksverdi = a[m];     // største verdi oppdateres
-            }
-        }
-        return m;
-    }
+
 
     public static void bytt(int[] a, int i, int j)
     {
@@ -363,33 +318,6 @@ public class Oblig1 {
         a[j] = temp;
     }
 
-    public static void sortering(int[] a){
-
-        int n = a.length;
-
-        if (n<2) throw new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
-
-        int m;
-        for (int i = 0; i<a.length; i++){
-            m = maks(a,0,a.length-i);
-            bytt(a,m,a.length-1-i);
-        }
-
-    }
-
-    public static void sorteringUtenUnntak(int[] a){
-
-        int n = a.length;
-
-        if (n<2) throw new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
-
-        int m;
-        for (int i = 0; i<a.length; i++){
-            m = maks(a,0,a.length-i);
-            bytt(a,m,a.length-1-i);
-        }
-
-    }
 
     public static int maks (int[] a){
         if (a.length<=0){
@@ -410,11 +338,11 @@ public class Oblig1 {
     }
 
     public static int min(int[] array){
-        int arrayLen = array.length;
+
         int min = Integer.MAX_VALUE;
         int index = 0;
 
-        for(int i = 0; i < arrayLen; i++){
+        for(int i = 0; i < array.length; i++){
             if(min > array[i]){
                 min = array[i];
                 index = i;
@@ -423,60 +351,95 @@ public class Oblig1 {
         return index;
     }
 
-    public static void bubble(int[] a, int fra, int til) {
-        System.out.println(Arrays.toString(a));
-        // Loop over alle elementene i a
-        for (int i=fra; i<til-1; ++i){
-            if (a[i] > a[i+1]) {
-                int tmp = a[i];
-                a[i] = a[i+1];
-                a[i+1] = tmp;
-            }
 
+
+    public static int partition(int[] array, int fra, int til){
+        int pivot = array[(fra+til)/2];
+
+        while(fra <= til){
+            while(array[fra] < pivot) ++fra;
+            while(array[til] > pivot) --til;
+
+            if(fra <= til) {
+                bytt(array,fra,til);
+                fra++;
+                til--;
+            }
         }
 
+
+        return fra;
     }
 
-    public static void partition(int [] a, int pivot, int fra, int til){ //Pivot er tallet vi skal partisjonere med. (Sorter etter pivot).
+    public static int delsortering_partisjon_subrutine(int[] a, int fra, int til){
+        while (fra <= til) {
+            while ((a[fra] % 2) != 0) fra++;
+            while ((a[til] % 2) == 0) til--;
 
-        int v = fra + 1;
-        int h = til - 1;
-
-        while (true) {
-
-            //Flytt venstrepeker mot høyre
-            //til vi har et ikke-pivotert tall
-            while (a[v] < pivot && v <= h) {
-                v++;
+            if(fra <= til) {
+                int temp = a[fra];
+                a[fra] = a[til];
+                a[til] = temp;
+                fra++;
+                til--;
             }
-            //Flytt høyrepeker tilsvarende
-            while (a[h] > pivot && h >= v) {
-                h--;
-            }
-            //Hvis høyre er lik venstre
-            //Er alle tallene sortert
-            if (v == h){
+        }
+        return fra;
+    }
+
+    public static int findIndexOfFirstEvenInteger(int[] a){
+        int index = 0;
+        for(int i = 0; i < a.length; i++){
+            if(a[i]%2==0){
+                index = i;
                 break;
             }
-
-            System.out.println(v + " - " + h);
-
-            //Ellers burde vi ende opp med å bytte dem
-            //Denne testen er overflødig.
-
-            System.out.println("vi bytter " + h + " med " + v);
-            int tmp = a[v];
-            a[v] = a[h];
-            a[h] = tmp;
-
-
-            System.out.println(Arrays.toString(a) + "<- Inni Partition");
         }
+        return index;
+    }
 
+    public static int scanDataSet(int[] array){
+        int partall = 0;
+        int oddetall = 0;
+        int state = -1;
 
+        for(int i = 0; i < array.length; i++){
+            if(array[i]%2 == 0) {
+                partall++;
+            }
+            if(array[i]%2 != 0){
+                oddetall++;
+            }
+            if(partall > 0 && oddetall > 0) state = 0;
+        }
+        if(partall > 0 && oddetall == 0) state = 1;
+        if(oddetall > 0 && partall == 0) state = 2;
 
+        return state;
+    }
 
+    public static void quicksort(int[] array, int fra, int til) {
+
+        int index = partition(array, fra, til);
+
+        if (fra < index - 1) quicksort(array, fra, index - 1);
+
+        if (index < til) quicksort(array, index , til);
+    }
+
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 
 
+    public static String sortString(String inputString) {
+
+        char tempArray[] = inputString.toCharArray();
+
+
+        Arrays.sort(tempArray);
+
+
+        return new String(tempArray);
+    }
 }
