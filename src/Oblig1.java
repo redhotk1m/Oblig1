@@ -179,28 +179,21 @@ public class Oblig1 {
             return;
         }
 
-        sortering(a);
-        System.out.println(Arrays.toString(a) + " la");
-
-        for (int i = 0, j = 0; i<a.length-1; i++){
-            if (a[i] % 2 != 0){
-                int temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
-                j++;
-            }
-        }
-        for (int k = 0; k<100000; k++){ //Bør være sortering fra x,y hvor x er der oddetallene slutter og partallene starter
-            // og y er lengden av arrayet, altså der partallene slutter. DETTE KLARER VI IKKE.
+        sorteringUtenUnntak(a);
+        int k = a.length;
+        int testverdi = 0;
             for (int i = 0, j = 0; i < a.length - 1; i++) {
-                if (a[i] % 2 == 0 && (a[i] > a[i + 1])) {
-                    int temp;
-                    temp = a[i];
-                    a[i] = a[i + 1];
-                    a[i + 1] = temp;
+                if (a[i] % 2 != 0) {
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                    j++;
+                    testverdi=a[i];
                 }
             }
-        }
+        System.out.println("HEI!" + testverdi);
+        partition(a,(testverdi+1+a.length)/2,testverdi,a.length);
+        System.out.println(Arrays.toString(a) + " leeeeeeeeeeeee");
     }
 
     //Oppgave 5
@@ -336,8 +329,48 @@ public class Oblig1 {
         return b;
     }
 
+    //Oppgave 10
 
-    
+    public static boolean inneholdt(String a, String b){
+        boolean z = false;
+        a = sortString(a);
+        b = sortString(b);
+        int counter = 0;
+        int k = 0;
+
+        for (int i = 0; i<a.length(); i++){
+
+            for (; k<b.length() ;k++){
+
+                if ( a.substring(i,i+1).equals( b.substring(k,k+1) ) ){
+                    k++;
+                    counter++;
+                    if ( k==b.length() ){
+                        i=a.length()+1;
+                    }
+                    break;
+                }
+            }
+        }
+        if ( counter == a.length() ){
+            z=true;
+        }
+        return z;
+    }
+
+
+    // Method to sort a string alphabetically
+    public static String sortString(String inputString)
+    {
+        // convert input string to char array
+        char tempArray[] = inputString.toCharArray();
+
+        // sort tempArray
+        Arrays.sort(tempArray);
+
+        // return new sorted string
+        return new String(tempArray);
+    }
 
     // Hjelpemetode
 
@@ -366,6 +399,20 @@ public class Oblig1 {
     }
 
     public static void sortering(int[] a){
+
+        int n = a.length;
+
+        if (n<2) throw new java.util.NoSuchElementException("a.length(" + n + ") < 2!");
+
+        int m;
+        for (int i = 0; i<a.length; i++){
+            m = maks(a,0,a.length-i);
+            bytt(a,m,a.length-1-i);
+        }
+
+    }
+
+    public static void sorteringUtenUnntak(int[] a){
 
         int n = a.length;
 
@@ -409,6 +456,61 @@ public class Oblig1 {
             }
         }
         return index;
+    }
+
+    public static void bubble(int[] a, int fra, int til) {
+        System.out.println(Arrays.toString(a));
+        // Loop over alle elementene i a
+        for (int i=fra; i<til-1; ++i){
+            if (a[i] > a[i+1]) {
+                int tmp = a[i];
+                a[i] = a[i+1];
+                a[i+1] = tmp;
+            }
+
+        }
+
+    }
+
+    public static void partition(int [] a, int pivot, int fra, int til){ //Pivot er tallet vi skal partisjonere med. (Sorter etter pivot).
+
+        int v = fra + 1;
+        int h = til - 1;
+
+        while (true) {
+
+            //Flytt venstrepeker mot høyre
+            //til vi har et ikke-pivotert tall
+            while (a[v] < pivot && v <= h) {
+                v++;
+            }
+            //Flytt høyrepeker tilsvarende
+            while (a[h] > pivot && h >= v) {
+                h--;
+            }
+            //Hvis høyre er lik venstre
+            //Er alle tallene sortert
+            if (v == h){
+                break;
+            }
+
+            System.out.println(v + " - " + h);
+
+            //Ellers burde vi ende opp med å bytte dem
+            //Denne testen er overflødig.
+
+            System.out.println("vi bytter " + h + " med " + v);
+            int tmp = a[v];
+            a[v] = a[h];
+            a[h] = tmp;
+
+
+            System.out.println(Arrays.toString(a) + "<- Inni Partition");
+        }
+
+
+
+
     }
 
 
