@@ -245,26 +245,31 @@ public class Oblig1 {
         if(t==null ||t.length()==0){
             return s;
         }
+        int value = 0;
+        value = t.length();
+        value = s.length();
+        boolean tt = false;
+        boolean ss = false;
+
         if (s.length()>t.length()) {
-            for (int i = 0; i < t.length(); i++) {
+            value = t.length();
+            tt=true;
+        }
+        else {
+            value = s.length();
+            ss=true;
+        }
+
+            for (int i = 0; i < value; i++) {
                 String c = (s.substring(i, i + 1) + t.substring(i, i + 1));
                 d = d + c;
-                if (i == t.length() - 1) {
+                if (tt && i == t.length() - 1 ){
                     d = d + s.substring(i + 1);
                 }
-            }
-        } //Vet det er overflødig kode, skal fikse dersom vi har tid.
-        else{
-            for (int i = 0; i < s.length(); i++) {
-                String c = (s.substring(i, i + 1) + t.substring(i, i + 1));
-                d = d + c;
-                if (i == s.length() - 1) {
+                else if (ss && i == s.length() - 1){
                     d = d + t.substring(i + 1);
-                }
-
             }
         }
-        System.out.println(d);
         return d;
     }
 
